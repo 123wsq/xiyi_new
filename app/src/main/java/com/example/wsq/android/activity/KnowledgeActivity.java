@@ -1,0 +1,189 @@
+package com.example.wsq.android.activity;
+
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.example.wsq.android.R;
+import com.example.wsq.android.adapter.ProductAdapter;
+import com.example.wsq.android.base.BaseActivity;
+import com.example.wsq.android.constant.Constant;
+import com.example.wsq.android.constant.ResponseKey;
+import com.example.wsq.android.inter.HttpResponseCallBack;
+import com.example.wsq.android.inter.HttpResponseListener;
+import com.example.wsq.android.service.OrderTaskService;
+import com.example.wsq.android.service.impl.OrderTaskServiceImpl;
+import com.example.wsq.android.utils.DensityUtil;
+import com.example.wsq.android.view.LoddingDialog;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
+import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+
+/**
+ * Created by wsq on 2017/12/20.
+ */
+
+public class KnowledgeActivity extends BaseActivity {
+
+    @BindView(R.id.tv_title)
+    TextView tv_title;
+    @BindView(R.id.rv_RecyclerView)
+    RecyclerView rv_RecyclerView;
+    @BindView(R.id.tv_Details) TextView tv_Details;
+    @BindView(R.id.ll_nodata)
+    LinearLayout ll_nodata;
+    @BindView(R.id.store_house_ptr_frame)
+    SmartRefreshLayout store_house_ptr_frame;
+
+    @BindView(R.id.iv_refresh_icon)
+    ImageView iv_refresh_icon;
+    @BindView(R.id.tv_content) TextView tv_content;
+    @BindView(R.id.tv_no_data) TextView tv_no_data;
+    @BindView(R.id.tv_refresh) TextView tv_refresh;
+
+
+    private LoddingDialog dialog;
+    private ProductAdapter mAdapter;
+    private OrderTaskService orderTaskService;
+    private List<Map<String, Object>> mData;
+    private  int curPage = 1;
+    private int total = 1;
+    private int unitPage = 15;
+
+
+    @Override
+    public int getByLayoutId() {
+        return R.layout.layout_collect;
+    }
+
+    public void init(){
+
+        dialog = new LoddingDialog(this);
+        tv_title.setText("圈内知识");
+        mData = new ArrayList<>();
+        orderTaskService = new OrderTaskServiceImpl();
+
+        rv_RecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        rv_RecyclerView.setHasFixedSize(true);
+
+        mAdapter = new ProductAdapter(this, mData, Constant.INFO_4);
+        rv_RecyclerView.setAdapter(mAdapter);
+        getKnowdgeList(null, 0);
+        onNotDataLayout();
+    }
+
+    public void setRefresh(){
+
+        store_house_ptr_frame.setRefreshHeader(new ClassicsHeader(this)
+                .setProgressResource(R.drawable.refresh_loadding).setDrawableProgressSize(40));
+        store_house_ptr_frame.setRefreshFooter(new ClassicsFooter(this)
+        );
+        store_house_ptr_frame.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                mData.clear();
+                curPage = 1;
+                refreshlayout.resetNoMoreData();
+                getKnowdgeList(refreshlayout, 1 );
+            }
+        });
+        store_house_ptr_frame.setOnLoadmoreListener(new OnLoadmoreListener() {
+            @Override
+            public void onLoadmore(RefreshLayout refreshlayout) {
+
+                if (curPage == (total % unitPage ==0 ? total/unitPage : total/unitPage +1)){
+
+                    refreshlayout.finishLoadmoreWithNoMoreData();
+                }else {
+                    curPage++;
+                    getKnowdgeList(refreshlayout, 2);
+                }
+
+            }
+        });
+    }
+
+    public void getKnowdgeList(final RefreshLayout refreshLayout, final int type){
+        dialog.show();
+        Map<String, String> param = new HashMap<>();
+        param.put(ResponseKey.PAGE, curPage+"");
+        param.put(ResponseKey.KEYWORDS, "");
+
+        orderTaskService.onGetKnowledgeList(this, param, new HttpResponseListener() {
+            @Override
+            public void onSuccess(Map<String, Object> result) {
+                total = (int) result.get(ResponseKey.TOTAL);
+                unitPage = (int) result.get(ResponseKey.PER_PAGE);
+                List<Map<String, Object>> list = (List<Map<String, Object>>) result.get(ResponseKey.DATA);
+
+                mData.addAll(list);
+
+                rv_RecyclerView.setVisibility(mData.size() ==0 ? View.GONE : View.VISIBLE);
+                ll_nodata.setVisibility(mData.size() ==0 ? View.VISIBLE : View.GONE);
+
+                if (type == 1){
+                    refreshLayout.finishRefresh();
+                }else if(type ==2 ){
+                    refreshLayout.finishLoadmore();
+                }
+                dialog.dismiss();
+            }
+
+            @Override
+            public void onFailure() {
+                if (type == 1){
+                    refreshLayout.finishRefresh();
+                }else if(type ==2 ){
+                    refreshLayout.finishLoadmore();
+                }
+                dialog.dismiss();
+            }
+        });
+
+    }
+
+
+    @OnClick({R.id.iv_back, R.id.tv_refresh})
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.iv_back:
+                finish();
+                break;
+            case R.id.tv_refresh:
+
+                curPage = 1;
+                getKnowdgeList(null, 0);
+                break;
+
+        }
+
+    }
+
+    public void onNotDataLayout(){
+        iv_refresh_icon.setVisibility(View.VISIBLE);
+        tv_content.setVisibility(View.VISIBLE);
+        tv_no_data.setVisibility(View.VISIBLE);
+        tv_refresh.setVisibility(View.VISIBLE);
+        iv_refresh_icon.setImageResource(R.drawable.image_main_massage);
+        tv_content.setText(getResources().getString(R.string.str_not_knowledge_p));
+        tv_no_data.setText(getResources().getString(R.string.str_not_knowledge_refresh));
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) iv_refresh_icon.getLayoutParams();
+        params.width = DensityUtil.dp2px(this, 80);
+        params.height = DensityUtil.dp2px(this, 80);
+        iv_refresh_icon.setLayoutParams(params);
+    }
+}

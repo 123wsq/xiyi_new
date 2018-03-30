@@ -1,0 +1,145 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    
+
+    <style name="mystyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/bg</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="orderstyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="spread_PopupAnimation" parent="android:Animation" mce_bogus="1">
+        <item name="android:windowEnterAnimation">@anim/spread_popup_in</item>
+        <item name="android:windowExitAnimation">@anim/spread_popup_out</item>
+    </style>
+
+    <style name="spread_red_pack" parent="android:Animation" mce_bogus="1">
+        <item name="android:windowEnterAnimation">@anim/red_pack_open</item>
+        <item name="android:windowExitAnimation">@anim/red_pack_close</item>
+    </style>
+
+
+    <style name="default_text_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+
+    <style name="default_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/default_button_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/default_button_size</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:background">@drawable/shape_button</item>
+        <item name="android:layout_marginLeft">@dimen/default_button_margin_lr</item>
+        <item name="android:layout_marginRight">@dimen/default_button_margin_lr</item>
+        <item name="android:layout_marginTop">@dimen/default_button_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/default_button_margin_top</item>
+        <item name="android:visibility">visible</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="default_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/default_height_min</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/default_content_size</item>
+        <item name="android:textColor">@color/default_font_color</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="default_edit">
+        <item name="android:textColor">@color/default_content_color_1</item>
+        <item name="android:textSize">@dimen/default_content_size</item>
+        <item name="android:textColorHint">@color/color_gray</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:background">@drawable/shape_text_stroken</item>
+    </style>
+
+
+
+
+
+    <style name="default_text_week" parent="default_text_style">
+        <item name="android:textColor">#3d9bd8</item>
+    </style>
+
+
+
+
+    <style name="common_line_horizontal_style">
+        <item name="android:height">0.5dp</item>
+        <item name="android:background">@drawable/common_line_horizontal</item>
+    </style>
+
+    <style name="menu_tab">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingTop">8dip</item>
+        <item name="android:paddingBottom">4dip</item>
+        <item name="android:button">@null</item>
+    </style>
+    <style name="style_pop" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/pop_exit_anim</item>
+    </style>
+
+
+
+    <style name="BaseDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <style name="FullScreenDialogAct" parent="@style/BaseDialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">#ff555555</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+    </style>
+    <style name="dialog_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/anim_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/anim_dialog_exit</item>
+    </style>
+
+    <style name="Transparent">
+    　　
+    　　<item name="android:windowBackground">@color/transparent</item>
+    　　<item name="android:theme">@android:style/Theme.DeviceDefault.NoActionBar</item>
+    　　<item name="android:windowIsTranslucent">true</item>
+    　　
+    　
+    　</style>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:fitsSystemWindows="true"
+    android:gravity="center"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg"
+        android:layout_marginLeft="@dimen/default_height_2"
+        android:layout_marginRight="@dimen/default_height_2"
+        >
+
+        <include layout="@layout/layout_default_dialog"></include>
+    </LinearLayout>
+
+
+</LinearLayout>

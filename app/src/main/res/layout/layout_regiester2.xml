@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/ll_layout"
+    android:fitsSystemWindows="true"
+    >
+
+    <include layout="@layout/layout_default_title"></include>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/defalut_layout_height"
+    android:orientation="horizontal"
+    android:background="@color/color_white"
+    android:layout_marginTop="1dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        style="@style/default_text"
+        android:text="职务信息"
+        android:gravity="center_vertical"
+
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_company"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defalut_layout_height"
+        android:orientation="horizontal"
+        android:background="@color/color_white"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:visibility="visible"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="公司"
+            style="@style/default_text"
+            android:gravity="center_vertical"
+            />
+        <ImageView
+            android:id="@+id/iv_important_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_important"
+            android:visibility="gone"
+            />
+
+        <EditText
+            android:id="@+id/et_company"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:textSize="@dimen/default_content_size"
+            android:hint="请输入您的公司"
+            android:background="@drawable/shape_text_stroken"
+            android:singleLine="true"
+            android:textColorHint="@color/color_gray"
+            android:textColor="@color/default_content_color_1"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defalut_layout_height"
+        android:orientation="horizontal"
+        android:background="@color/color_white"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="学历"
+            style="@style/default_text"
+            android:gravity="center_vertical"
+            android:drawableRight="@drawable/image_important"
+            />
+
+        <TextView
+            android:id="@+id/tv_xueli"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:textSize="@dimen/default_content_size"
+            android:hint="高中及以下"
+            android:textColorHint="@color/default_content_color_2"
+            android:textColor="@color/default_content_color_1"
+            android:background="@drawable/shape_text_stroken"
+            android:singleLine="true"
+
+
+            />
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/image_right_next"
+            android:layout_marginLeft="@dimen/default_margin_3"
+            />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defalut_layout_height"
+        android:orientation="horizontal"
+        android:background="@color/color_white"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="角色"
+            style="@style/default_text"
+            android:gravity="center_vertical"
+            android:drawableRight="@drawable/image_important"
+            />
+
+        <TextView
+            android:id="@+id/tv_juese"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:textSize="@dimen/default_content_size"
+            android:hint="服务工程师"
+            android:textColorHint="@color/default_content_color_2"
+            android:textColor="@color/default_content_color_1"
+            android:background="@drawable/shape_text_stroken"
+            android:singleLine="true"
+            />
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/image_right_next"
+            android:layout_marginLeft="@dimen/default_margin_3"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_location"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defalut_layout_height"
+        android:orientation="horizontal"
+        android:background="@color/color_white"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="期望地点"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/default_text_size"
+            android:drawableRight="@drawable/image_important"
+            />
+
+        <EditText
+            android:id="@+id/et_location"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:textSize="14sp"
+            android:hint="请输入您期望的工作地点"
+            android:textColorHint="@color/color_gray"
+            android:background="@drawable/shape_text_stroken"
+            android:singleLine="true"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defalut_layout_height"
+        android:orientation="horizontal"
+        android:background="@color/color_white"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="部门及职务"
+            style="@style/default_text"
+            android:gravity="center_vertical"
+            />
+        <ImageView
+            android:id="@+id/iv_important_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_important"
+            android:visibility="gone"
+            />
+
+        <EditText
+            android:id="@+id/et_bumen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:textSize="@dimen/default_content_size"
+            android:hint="请填写您的部门和职务"
+            android:textColorHint="@color/color_gray"
+            android:textColor="@color/default_content_color_1"
+            android:background="@drawable/shape_text_stroken"
+            android:singleLine="true"
+            />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_next"
+        style="@style/default_button"
+        android:text="下一步"
+        />
+
+
+</LinearLayout>

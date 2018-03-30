@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:minWidth="200dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_height_small">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="提示"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/default_text_max_size" />
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/image_close"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/default_radius"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#D1D1D1" />
+
+        <EditText
+            android:id="@+id/tv_inputMessage"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/shape_text_stroken"
+            android:padding="@dimen/default_radius"
+            android:textColorHint="@color/color_gray"
+            android:textSize="@dimen/default_text_size"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginRight="@dimen/default_margin"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/dialog_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginRight="@dimen/default_margin"
+            android:gravity="center"
+            android:minHeight="70dp"
+            android:text="nnnnn"
+
+            android:textSize="@dimen/default_content_size"
+            android:textColor="@color/default_font_color"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/dialog_btn_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <View
+                style="@style/common_line_horizontal_style"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/dialog_ok"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_dialog_left"
+                    android:text="确定"
+                    android:textColor="@color/default_color"
+                    android:textSize="@dimen/default_text_size" />
+
+                <View
+                    android:id="@+id/dialig_view"
+                    style="@style/common_line_horizontal_style"
+                    android:layout_width="0.1dp"
+                    android:layout_height="match_parent" />
+
+                <Button
+                    android:id="@+id/dialog_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_dialog_right"
+                    android:text="取消"
+                    android:textColor="@color/default_color"
+                    android:textSize="@dimen/default_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

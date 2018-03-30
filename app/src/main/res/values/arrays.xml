@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="searchTag">
+        <item>变频器</item>
+        <item>流量计</item>
+        <item>氧化锆</item>
+
+
+    </string-array>
+    <string-array name="arrays_skill">
+        <item>PLC</item>
+        <item>DCS</item>
+        <item>PAC/PLMC</item>
+        <item>工控机</item>
+        <item>嵌入式系统</item>
+        <item>人机界面</item>
+        <item>低压变频器</item>
+        <item>中压变频器</item>
+        <item>高压变频器</item>
+        <item>电机</item>
+        <item>伺服</item>
+        <item>仪器仪表</item>
+        <item>阀门</item>
+        <item>分析仪表</item>
+        <item>电源</item>
+        <item>其他</item>
+
+    </string-array>
+
+    <array name="animation_open">
+        <item>@drawable/image_red_packet_open_1</item>
+        <item>@drawable/image_red_packet_open_2</item>
+        <item>@drawable/image_red_packet_open_3</item>
+        <item>@drawable/image_red_packet_open_4</item>
+        <item>@drawable/image_red_packet_open_5</item>
+        <item>@drawable/image_red_packet_open_6</item>
+        <item>@drawable/image_red_packet_open_7</item>
+        <item>@drawable/image_red_packet_open_8</item>
+        <item>@drawable/image_red_packet_open_9</item>
+        <item>@drawable/image_red_packet_open_4</item>
+        <item>@drawable/image_red_packet_open_10</item>
+        <item>@drawable/image_red_packet_open_11</item>
+    </array>
+</resources>

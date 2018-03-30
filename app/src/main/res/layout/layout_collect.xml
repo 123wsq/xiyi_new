@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_backgroud_color"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_default_title"></include>
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/store_house_ptr_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srlEnablePreviewInEditMode="true">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+            <!--没有数据是显示-->
+            <include layout="@layout/layout_no_data"></include>
+
+            <!--可编辑的-->
+            <LinearLayout
+                android:id="@+id/ll_collect_buttom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/defalut_layout_height"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/cb_all_select"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="@dimen/default_radius"
+                    android:background="@drawable/selector_collect_check"
+                    android:button="@null" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/default_radius"
+                    android:gravity="center"
+                    android:text="全选" />
+
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_finish"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="@dimen/default_radius"
+                    android:background="@drawable/shape_button"
+                    android:gravity="center"
+                    android:text="删除"
+                    android:textColor="@color/color_white" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+</LinearLayout>

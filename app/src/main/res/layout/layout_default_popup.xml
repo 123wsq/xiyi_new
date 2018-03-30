@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/shape_popup_gray"
+        android:layout_marginBottom="70dp"
+        android:padding="20dp"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        >
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="提示"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/default_text_size"
+
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray"
+            />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white"
+        android:scrollbars="none"
+        android:dividerHeight="1dp"
+        android:divider="@color/color_gray"
+
+        />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defalut_layout_height"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape_popup_gray"
+        android:layout_marginTop="@dimen/default_radius"
+        android:text="取消"
+        android:textSize="@dimen/default_text_title_size"
+        android:textColor="@color/default_bule"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/default_margin_3"
+        />
+</RelativeLayout>

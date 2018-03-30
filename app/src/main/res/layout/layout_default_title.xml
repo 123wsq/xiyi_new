@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/defalut_layout_height"
+    android:background="@drawable/image_title_background"
+    android:id="@+id/rl_layout"
+    >
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text=""
+        android:textSize="@dimen/default_title_size"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        />
+    <LinearLayout
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/defalut_layout_height"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_back"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_Details"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text=""
+        android:textSize="@dimen/default_content_size"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/default_margin"
+        android:textColor="@color/color_white"
+
+        />
+    <ImageView
+        android:id="@+id/iv_add"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/image_add_bank"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/default_margin"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/default_backgroud_color"
+    >
+
+    <RadioGroup
+        android:id="@+id/rg_group"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/default_button_margin_top"
+        android:layout_marginRight="@dimen/default_button_margin_top"
+        android:layout_marginTop="@dimen/default_radius"
+        >
+        <RadioButton
+            android:id="@+id/tv_finish"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="已通过"
+            android:gravity="center"
+            android:button="@null"
+            android:checked="true"
+            android:textColor="@drawable/selector_order_font"
+            android:background="@drawable/selector_order_progress_left"
+            />
+        <RadioButton
+            android:id="@+id/tv_unfinish"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="未通过"
+            android:gravity="center"
+            android:button="@null"
+            android:background="@drawable/selector_order_progress_right"
+            android:textColor="@drawable/selector_order_font"
+            />
+    </RadioGroup>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/store_house_ptr_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnablePreviewInEditMode="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/default_radius"
+        />
+        <include layout="@layout/layout_no_data"></include>
+        </LinearLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>

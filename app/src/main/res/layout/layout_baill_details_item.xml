@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/ll_layout"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_height_min">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="提现"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:textSize="@dimen/default_content_size"
+            android:textColor="@color/default_font_color"
+            />
+
+        <TextView
+            android:id="@+id/tv_apply_time"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="2017-12-26 12:00"
+            android:gravity="center|right"
+            android:textColor="@color/default_content_color_2"
+            android:layout_marginRight="@dimen/default_margin"
+            android:textSize="@dimen/default_list_item_content_size"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_height_min">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="余额"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:textSize="@dimen/default_list_item_content_size"
+            android:textColor="@color/default_content_color_1"
+
+            />
+        <TextView
+            android:id="@+id/tv_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="0.00"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:textSize="@dimen/default_list_item_content_size"
+            android:textColor="@color/default_content_color_1"
+            />
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="0.00"
+            android:gravity="center|right"
+            android:layout_marginRight="@dimen/default_margin"
+            android:textSize="@dimen/default_list_item_content_size"
+            android:textColor="@color/default_content_color_1"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

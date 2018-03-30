@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/default_backgroud_color"
+    android:fitsSystemWindows="true"
+    android:id="@+id/ll_layout"
+
+    >
+
+    <include layout="@layout/layout_default_title"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defalut_layout_height"
+        android:background="@color/color_white"
+        android:gravity="center_vertical"
+        >
+        <RadioGroup
+            android:id="@+id/rg_group"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/default_margin"
+            >
+            <RadioButton
+                android:id="@+id/rb_all"
+                android:layout_width="@dimen/defalut_layout_height"
+                android:layout_height="match_parent"
+                android:text="本月"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@drawable/selector_menu_color"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="/"
+                android:gravity="center"
+                android:textSize="@dimen/default_text_title_size"
+                />
+            <RadioButton
+                android:id="@+id/rb_cur_month"
+                android:layout_width="@dimen/defalut_layout_height"
+                android:layout_height="match_parent"
+                android:text="半年"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@drawable/selector_menu_color"
+                />
+        </RadioGroup>
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/iv_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_calander"
+            android:layout_marginRight="@dimen/default_margin"
+
+            />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white"
+        android:layout_marginTop="@dimen/default_margin"
+        android:visibility="visible"
+        />
+
+    <include layout="@layout/layout_no_data"></include>
+
+</LinearLayout>

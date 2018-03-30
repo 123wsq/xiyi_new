@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_layout_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+    <android.support.v4.view.ViewPager
+
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/layout_Indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/defalut_layout_Indicator"
+        />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_layout_new_year"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        >
+
+        <ImageView
+            android:id="@+id/im_new_year"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            />
+
+        <TextView
+            android:id="@+id/tv_break"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳过"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/default_margin_4"
+            android:textSize="@dimen/default_content_size"
+            android:background="@drawable/shape_break"
+            android:padding="@dimen/default_padding_4"
+            android:textColor="@color/color_white"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl_download"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            >
+            <ProgressBar
+                android:id="@+id/pb_progress"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:progress="0"
+                android:max="100"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progressDrawable="@drawable/custom_progress"
+                android:layout_centerInParent="true"
+                />
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="0 %"
+                android:textColor="@color/color_white"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

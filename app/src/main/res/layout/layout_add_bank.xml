@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/default_backgroud_color"
+    android:fitsSystemWindows="true"
+    >
+
+    <include layout="@layout/layout_default_title"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/default_margin"
+        android:paddingLeft="@dimen/default_margin"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="仅支持"
+        android:textSize="@dimen/default_title_size"
+        android:textColor="@color/default_font_color"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="【中国工商银行】"
+            android:textSize="@dimen/default_title_size"
+            android:textColor="@color/default_red"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defalut_layout_height"
+        android:background="@color/color_white"
+        android:layout_marginTop="@dimen/default_radius"
+        android:paddingLeft="@dimen/default_margin"
+        android:paddingRight="@dimen/default_margin"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="持卡人"
+            android:gravity="left|center"
+            android:textSize="@dimen/default_content_size"
+            android:textColor="@color/default_font_color"
+            />
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="111"
+            android:textSize="@dimen/default_content_size"
+            android:textColor="@color/default_font_color"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defalut_layout_height"
+        android:background="@color/color_white"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="@dimen/default_margin"
+        android:paddingRight="@dimen/default_margin"
+        android:orientation="horizontal"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="卡号"
+            android:gravity="left|center"
+            android:drawableRight="@drawable/image_important"
+            android:textSize="@dimen/default_content_size"
+            android:textColor="@color/default_font_color"
+            />
+
+        </LinearLayout>
+        <EditText
+            android:id="@+id/et_backcode"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text=""
+            android:inputType="number"
+            android:background="@drawable/shape_edit"
+            android:hint="无需网银/免手续费"
+            android:textSize="@dimen/default_list_item_content_size"
+            android:textColorHint="@color/default_content_color_2"
+            />
+
+    </LinearLayout>
+        <TextView
+            android:id="@+id/tv_cordCode_error"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/defalut_layout_height"
+            android:text="请输入正确的工商银行卡号"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginRight="@dimen/default_margin"
+            android:textColor="@color/RED"
+            android:visibility="gone"
+            />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defalut_layout_height"
+        android:background="@color/color_white"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="@dimen/default_margin"
+        android:paddingRight="@dimen/default_margin"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="卡类型"
+            android:gravity="left|center"
+            android:textSize="@dimen/default_content_size"
+            android:textColor="@color/default_font_color"
+            />
+        <TextView
+            android:id="@+id/tv_card_type"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text=""
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defalut_layout_height"
+        android:background="@color/color_white"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="@dimen/default_margin"
+        android:paddingRight="@dimen/default_margin"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="手机号"
+            android:gravity="left|center"
+            android:textSize="@dimen/default_content_size"
+            android:textColor="@color/default_font_color"
+            />
+        <TextView
+            android:id="@+id/tv_tel"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textSize="@dimen/default_content_size"
+            android:textColor="@color/default_content_color_2"
+            />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_next"
+        style="@style/default_button"
+        android:text="下一步"
+        android:background="@drawable/shape_disable_button"
+        />
+
+
+</LinearLayout>

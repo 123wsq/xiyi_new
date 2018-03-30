@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_nodata"
+    android:visibility="gone"
+    >
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/iv_refresh_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_main_massage"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:gravity="center"
+            android:text="您还没有发布知识点呢~"
+            android:textColor="@color/default_content_color_2"
+            android:textSize="@dimen/default_content_size"
+            android:visibility="gone"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="点击查看有没有新数据."
+            android:layout_marginTop="@dimen/default_margin"
+            android:textColor="@color/default_content_color_2"
+            android:textSize="@dimen/default_list_item_content_size"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tv_refresh"
+            android:layout_width="81dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/default_margin"
+            android:background="@drawable/shape_refresh"
+            android:gravity="center"
+            android:paddingBottom="@dimen/default_radius"
+            android:paddingLeft="@dimen/default_margin"
+            android:paddingRight="@dimen/default_margin"
+            android:paddingTop="@dimen/default_radius"
+            android:text="点击刷新"
+            android:textColor="@color/default_content_color_2"
+            android:textSize="@dimen/default_btn_refresh_size"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+</LinearLayout>

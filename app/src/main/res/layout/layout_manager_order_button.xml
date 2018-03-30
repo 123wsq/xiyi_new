@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layout_manager"
+    android:background="@color/color_white"
+    >
+
+    <RadioGroup
+        android:id="@+id/rg_group"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/color_white"
+        android:layout_gravity="center_vertical"
+        >
+        <RadioButton
+            android:id="@+id/rb_unfinsh"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/default_radius"
+            android:paddingBottom="@dimen/default_radius"
+            android:text="未审核"
+            android:button="@null"
+            android:gravity="center"
+            android:textSize="@dimen/default_list_item_content_size"
+            android:textColor="@color/default_font_color"
+            android:background="@drawable/selector_radiobutton"
+
+            />
+
+        <RadioButton
+            android:id="@+id/rb_finish"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/default_radius"
+            android:paddingBottom="@dimen/default_radius"
+            android:text="已审核"
+            android:button="@null"
+            android:gravity="center"
+            android:textSize="@dimen/default_list_item_content_size"
+            android:textColor="@color/default_font_color"
+            android:background="@drawable/selector_radiobutton"
+            />
+        <RadioButton
+            android:id="@+id/rb_dispose"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/default_radius"
+            android:paddingBottom="@dimen/default_radius"
+            android:text="处理中"
+            android:button="@null"
+            android:gravity="center"
+            android:textSize="@dimen/default_list_item_content_size"
+            android:textColor="@color/default_font_color"
+            android:background="@drawable/selector_radiobutton"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_order"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:layout_marginTop="@dimen/default_radius"
+            android:paddingBottom="@dimen/default_radius"
+            android:gravity="center"
+            android:textSize="@dimen/default_list_item_content_size"
+            android:textColor="@color/default_font_color"
+            android:background="@drawable/selector_radiobutton"
+            android:text="已完成" />
+
+    </RadioGroup>
+</LinearLayout>
